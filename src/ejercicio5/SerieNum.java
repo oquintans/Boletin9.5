@@ -49,12 +49,14 @@ public class SerieNum {
 
         long fib1 = 0;
         long fib2 = 1;
-        String serie = "";
+        long fib3 = 0;
+        String serie = fib1 + "," + fib2;
 
-        for (int i = 0; i+2 < num; i++) {
-            fib1 += fib2;
-            fib2 += fib1;
-            serie += " " + fib1 + " " + fib2;
+        for (int i = 2; i < num; i++) {
+            fib3 = fib1 + fib2;
+            fib1 = fib2;
+            fib2 = fib3;
+            serie += "," + fib3;
 
         }
         return serie;
